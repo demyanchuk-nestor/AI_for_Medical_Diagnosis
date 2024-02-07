@@ -16,7 +16,7 @@ from tensorflow.keras.layers import (
     UpSampling3D,
 )
 from tensorflow.keras.layers import concatenate
-from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.optimizers.legacy import Adam
 from tensorflow.keras.utils import to_categorical
 from tensorflow.compat.v1.logging import INFO, set_verbosity
 
