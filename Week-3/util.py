@@ -52,9 +52,9 @@ def plot_image_grid(image):
         ax[0][i].set_yticks([])
         if i == 0:
             ax[0][i].set_ylabel('Coronal', fontsize=15)
-        ax[0][i].legend(handles=[Line2D([0], [0], color='#66fc00', lw=4, label='Non-enhancing tumor'),
-                                 Line2D([0], [0], color='b', lw=4, label='Enhancing tumor'),
-                                 Line2D([0], [0], color='r', lw=4, label='Edema')], loc='lower right')
+    ax[0][i].legend(handles=[Line2D([0], [0], color='#66fc00', lw=4, label='Non-enhancing tumor'),
+                             Line2D([0], [0], color='b', lw=4, label='Enhancing tumor'),
+                             Line2D([0], [0], color='r', lw=4, label='Edema')], loc='lower right')
 
     for i in range(6):
         n = np.random.randint(transversal.shape[2])
