@@ -73,6 +73,7 @@ def plot_image_grid(image):
                                  Line2D([0], [0], color='b', lw=4, label='Збільшення пухлини (Enhancing tumor)'),
                                  Line2D([0], [0], color='#f01e2c', lw=4, label='Набряк (Edema)')], ncols=3, loc='outside upper center', handleheight=0)
     fig.subplots_adjust(wspace=0, hspace=0)
+    plt.tight_layout()
 
 
 def visualize_data_gif(data_):
