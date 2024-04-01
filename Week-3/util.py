@@ -51,7 +51,7 @@ def plot_image_grid(image):
         ax[0][i].set_xticks([])
         ax[0][i].set_yticks([])
         if i == 0:
-            ax[0][i].set_ylabel('Вінцевий переріз \n(Coronal)', fontsize=10)
+            ax[0][i].set_ylabel('Вінцевий переріз \n(Coronal)', fontsize=11)
 
     for i in range(6):
         n = np.random.randint(transversal.shape[2])
@@ -59,7 +59,7 @@ def plot_image_grid(image):
         ax[1][i].set_xticks([])
         ax[1][i].set_yticks([])
         if i == 0:
-            ax[1][i].set_ylabel('Поперечний переріз \n(Transversal)', fontsize=10)
+            ax[1][i].set_ylabel('Поперечний переріз \n(Transversal)', fontsize=11)
 
     for i in range(6):
         n = np.random.randint(sagittal.shape[2])
@@ -67,7 +67,7 @@ def plot_image_grid(image):
         ax[2][i].set_xticks([])
         ax[2][i].set_yticks([])
         if i == 0:
-            ax[2][i].set_ylabel('Сагітальний переріз \n(Sagittal)', fontsize=10)
+            ax[2][i].set_ylabel('Сагітальний переріз \n(Sagittal)', fontsize=11)
 
     fig.legend(handles=[Line2D([0], [0], color='#66fc00', lw=4, label='Пухлина без збільшення  (Non-enhancing tumor)'),
                                  Line2D([0], [0], color='b', lw=4, label='Збільшення пухлини (Enhancing tumor)'),
