@@ -71,7 +71,7 @@ def plot_image_grid(image):
 
     fig.legend(handles=[Line2D([0], [0], color='#66fc00', lw=4, label='Non-enhancing tumor'),
                                  Line2D([0], [0], color='b', lw=4, label='Enhancing tumor'),
-                                 Line2D([0], [0], color='r', lw=4, label='Edema')], loc='outside right upper')
+                                 Line2D([0], [0], color='#f01e2c', lw=4, label='Edema')], loc='outside right upper')
     fig.subplots_adjust(wspace=0, hspace=0)
 
 
