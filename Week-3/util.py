@@ -31,7 +31,7 @@ def plot_image_grid(image):
 
     data_all.append(image)
 
-    fig, ax = plt.subplots(3, 6, figsize=[16, 9])
+    fig, ax = plt.subplots(3, 6, figsize=[16, 8])
 
     # coronal plane
     coronal = np.transpose(data_all, [1, 3, 2, 4, 0])
