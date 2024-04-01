@@ -332,7 +332,7 @@ def predict_and_viz(image, label, model, threshold, loc=(100, 100, 50)):
 
     ax[0][2].imshow(np.squeeze(image_labeled[:, :, z, :]))
     ax[0][2].set_xlabel('Transversal', fontsize=15)
-    ax[0][2].legend(handles=[Line2D([0], [0], color='g', lw=4, label='Non-enhancing tumor'),
+    ax[0][2].legend(handles=[Line2D([0], [0], color='#66fc00', lw=4, label='Non-enhancing tumor'),
                              Line2D([0], [0], color='b', lw=4, label='Enhancing tumor'),
                              Line2D([0], [0], color='r', lw=4, label='Edema')], loc='lower right')
 
