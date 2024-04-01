@@ -328,26 +328,25 @@ def predict_and_viz(image, label, model, threshold, loc=(100, 100, 50)):
     x, y, z = loc
 
     ax[0][0].imshow(np.rot90(image_labeled[x, :, :, :]))
-    ax[0][0].set_ylabel('Ground Truth', fontsize=15)
-    ax[0][0].set_xlabel('Sagital', fontsize=15)
+    ax[0][0].set_ylabel('Експертні мітки \n(Ground Truth)', fontsize=11)
+    ax[0][0].set_xlabel('Сагітальний переріз \n(Sagittal)', fontsize=11)
 
     ax[0][1].imshow(np.rot90(image_labeled[:, y, :, :]))
-    ax[0][1].set_xlabel('Coronal', fontsize=15)
+    ax[0][1].set_xlabel('Вінцевий переріз \n(Coronal)', fontsize=11)
 
     ax[0][2].imshow(np.squeeze(image_labeled[:, :, z, :]))
-    ax[0][2].set_xlabel('Transversal', fontsize=15)
-    ax[0][2].legend(handles=[Line2D([0], [0], color='#66fc00', lw=4, label='Non-enhancing tumor'),
-                             Line2D([0], [0], color='b', lw=4, label='Enhancing tumor'),
-                             Line2D([0], [0], color='r', lw=4, label='Edema')], loc='lower right')
+    ax[0][2].set_xlabel('Поперечний переріз \n(Transversal)', fontsize=11)
 
     ax[1][0].imshow(np.rot90(model_labeled_image[x, :, :, :]))
-    ax[1][0].set_ylabel('Prediction', fontsize=15)
+    ax[1][0].set_ylabel('Прогноз моделі \n(Prediction)', fontsize=11)
 
     ax[1][1].imshow(np.rot90(model_labeled_image[:, y, :, :]))
     ax[1][2].imshow(model_labeled_image[:, :, z, :])
 
     fig.subplots_adjust(wspace=0, hspace=.12)
-
+    fig.legend(handles=[Line2D([0], [0], color='#66fc00', lw=4, label='Пухлина без збільшення  (Non-enhancing tumor)'),
+                                     Line2D([0], [0], color='b', lw=4, label='Збільшення пухлини (Enhancing tumor)'),
+                                     Line2D([0], [0], color='#f01e2c', lw=4, label='Набряк (Edema)')], ncols=3, loc='outside upper center', handleheight=0)
     for i in range(2):
         for j in range(3):
             ax[i][j].set_xticks([])
