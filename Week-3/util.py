@@ -2,6 +2,7 @@ import cv2
 import h5py
 import imageio
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 import numpy as np
 import tensorflow as tf
 from IPython.display import Image
