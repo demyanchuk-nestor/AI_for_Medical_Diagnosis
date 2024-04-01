@@ -69,9 +69,9 @@ def plot_image_grid(image):
         if i == 0:
             ax[2][i].set_ylabel('Sagittal', fontsize=15)
 
-    fig.legend(handles=[Line2D([0], [0], color='#66fc00', lw=4, label='Non-enhancing tumor'),
-                                 Line2D([0], [0], color='b', lw=4, label='Enhancing tumor'),
-                                 Line2D([0], [0], color='#f01e2c', lw=4, label='Edema')], ncols=3, loc='outside upper center', labelspacing=0)
+    fig.legend(handles=[Line2D([0], [0], color='#66fc00', lw=4, label='Пухлина без збільшення  (Non-enhancing tumor)'),
+                                 Line2D([0], [0], color='b', lw=4, label='Збільшення пухлини (Enhancing tumor)'),
+                                 Line2D([0], [0], color='#f01e2c', lw=4, label='Набряк (Edema)')], ncols=3, loc='outside upper center', handleheight=0)
     fig.subplots_adjust(wspace=0, hspace=0)
 
 
