@@ -335,7 +335,7 @@ def predict_and_viz(image, label, model, threshold, loc=(100, 100, 50)):
     ax[0][1].set_xlabel('Вінцевий переріз \n(Coronal)', fontsize=11)
 
     ax[0][2].imshow(np.squeeze(image_labeled[:, :, z, :]))
-    ax[0][2].set_xlabel('Поперечний переріз \n(Transversal)', fontsize=11)
+    ax[0][2].set_xlabel('Поперечний переріз (Transversal)', fontsize=11)
 
     ax[1][0].imshow(np.rot90(model_labeled_image[x, :, :, :]))
     ax[1][0].set_ylabel('Прогноз моделі \n(Prediction)', fontsize=11)
