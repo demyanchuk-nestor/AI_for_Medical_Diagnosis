@@ -38,40 +38,41 @@ def get_performance_metrics(y, pred, class_labels, tp=get_true_pos,
     if len(thresholds) != len(class_labels):
         thresholds = [.5] * len(class_labels)
 
-    columns = ["", "TP", "TN", "FP", "FN", "Accuracy", "Prevalence",
+    columns = ["Class", "TP", "TN", "FP", "FN", "Accuracy", "Prevalence",
                "Sensitivity",
                "Specificity", "PPV", "NPV", "AUC", "F1", "Threshold"]
     df = pd.DataFrame(columns=columns)
+     
     for i in range(len(class_labels)):
-        df.loc[i] = [""] + [0] * (len(columns) - 1)
-        df.loc[i][0] = class_labels[i]
-        df.loc[i][1] = round(tp(y[:, i], pred[:, i]),
+        # df.loc[i,:] = [""] + [0] * (len(columns) - 1)
+        df.loc[i, columns[0]] = class_labels[i]
+        df.loc[i, columns[1]] = round(tp(y[:, i], pred[:, i]),
                              3) if tp != None else "Not Defined"
-        df.loc[i][2] = round(tn(y[:, i], pred[:, i]),
+        df.loc[i, columns[2]]  = round(tn(y[:, i], pred[:, i]),
                              3) if tn != None else "Not Defined"
-        df.loc[i][3] = round(fp(y[:, i], pred[:, i]),
+        df.loc[i, columns[3]]  = round(fp(y[:, i], pred[:, i]),
                              3) if fp != None else "Not Defined"
-        df.loc[i][4] = round(fn(y[:, i], pred[:, i]),
+        df.loc[i, columns[4]]  = round(fn(y[:, i], pred[:, i]),
                              3) if fn != None else "Not Defined"
-        df.loc[i][5] = round(acc(y[:, i], pred[:, i], thresholds[i]),
+        df.loc[i, columns[5]] = round(acc(y[:, i], pred[:, i], thresholds[i]),
                              3) if acc != None else "Not Defined"
-        df.loc[i][6] = round(prevalence(y[:, i]),
+        df.loc[i, columns[6]]  = round(prevalence(y[:, i]),
                              3) if prevalence != None else "Not Defined"
-        df.loc[i][7] = round(sens(y[:, i], pred[:, i], thresholds[i]),
+        df.loc[i, columns[7]]  = round(sens(y[:, i], pred[:, i], thresholds[i]),
                              3) if sens != None else "Not Defined"
-        df.loc[i][8] = round(spec(y[:, i], pred[:, i], thresholds[i]),
+        df.loc[i, columns[8]]  = round(spec(y[:, i], pred[:, i], thresholds[i]),
                              3) if spec != None else "Not Defined"
-        df.loc[i][9] = round(ppv(y[:, i], pred[:, i], thresholds[i]),
+        df.loc[i, columns[9]]  = round(ppv(y[:, i], pred[:, i], thresholds[i]),
                              3) if ppv != None else "Not Defined"
-        df.loc[i][10] = round(npv(y[:, i], pred[:, i], thresholds[i]),
+        df.loc[i, columns[10]]  = round(npv(y[:, i], pred[:, i], thresholds[i]),
                               3) if npv != None else "Not Defined"
-        df.loc[i][11] = round(auc(y[:, i], pred[:, i]),
+        df.loc[i, columns[11]]  = round(auc(y[:, i], pred[:, i]),
                               3) if auc != None else "Not Defined"
-        df.loc[i][12] = round(f1(y[:, i], pred[:, i] > thresholds[i]),
+        df.loc[i, columns[12]]  = round(f1(y[:, i], pred[:, i] > thresholds[i]),
                               3) if f1 != None else "Not Defined"
-        df.loc[i][13] = round(thresholds[i], 3)
+        df.loc[i, columns[13]] = round(thresholds[i], 3)
 
-    df = df.set_index("")
+    # df = df.set_index("")
     return df
 
 
