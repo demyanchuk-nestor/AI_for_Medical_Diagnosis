@@ -4,16 +4,16 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
-# import tensorflow.compat.v1.keras.backend as K
+import tensorflow.compat.v1.keras.backend as K
 # from tensorflow.keras import backend as K
-# tf.compat.v1.disable_eager_execution()
-import tensorflow.python.keras.backend as K
+tf.compat.v1.disable_eager_execution()
+# import tensorflow.python.keras.backend as K
 from tensorflow.python.framework.ops import disable_eager_execution
 disable_eager_execution()
 
 from tensorflow.keras.preprocessing import image
 from sklearn.metrics import roc_auc_score, roc_curve
-# from tensorflow.compat.v1.logging import INFO, set_verbosity
+from tensorflow.compat.v1.logging import INFO, set_verbosity
 
 random.seed(a=None, version=2)
 
